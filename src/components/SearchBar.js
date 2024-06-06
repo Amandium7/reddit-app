@@ -14,32 +14,27 @@ export const SearchBar = () => {
         dispatch(setQuery(event.target.value));
     }
     const handleSearch = () => {
-        // const testing = query;
-        // console.log (testing);
         dispatch(setResults(query));
         dispatch(resetQuery());
         dispatch(fetchData(query));
     }
 
     return (
-        <div className="search-bar">
-            <h2>Search</h2>
-            <input 
-                type="text"
-                value = {query}
-                onChange = {handleInputChange}
-            />
-            <button onClick={ handleSearch}>Search</button>
-            {searchStatus === 'loading' && <p>Loading...</p>}
-            {searchStatus === 'failed' && <p>Error...{searchError}</p>}
-            {searchStatus === 'succeeded' && (
-                <ul>
-                    {searchResults.data.children.map((result, index) => (
-                        <li key={index}>{result.data.title} <img src={result.data.thumbnail} alt={result.data.title}/></li>
-                        
-                    ))}
-                </ul>
-            )}
+        <div className="search-bar-module">
+            <div className="gold-bar-top"></div>
+            <div className="row">
+                <h2>Search</h2>
+                <input 
+                    type="text"
+                    value = {query}
+                    onChange = {handleInputChange}
+                />
+                <button onClick={ handleSearch}>Search</button>
+                {searchStatus === 'loading' && <p className="api-text">Loading...</p>}
+                {searchStatus === 'failed' && <p className="api-text">Error...{searchError}</p>}
+                {/* {searchStatus === 'succeeded' && ()} */}
+            </div>
+            <div className="gold-bar-bottom"></div>
         </div>    
     )
 };

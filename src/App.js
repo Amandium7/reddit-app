@@ -2,12 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 import { Hero } from './components/Hero';
 import { SearchBar } from './components/SearchBar';
+import { PostList } from './components/PostList';
+import './assets/styles/style.scss';
 
 function App() {
   return (
     <div className="App">
-      {/* <Hero /> */}
+      <Hero />
       <SearchBar />
+      <PostList />
 
 
       {/* <header className="App-header">
