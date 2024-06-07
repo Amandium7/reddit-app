@@ -162,6 +162,9 @@ body {
             grid-template-columns: 1fr;
             gap: 40px;
         }
+        @media only screen and (max-width: 650px) {
+          padding: 20px;
+        }
         .post-item {
             background: white;
             border-radius: 50px;
