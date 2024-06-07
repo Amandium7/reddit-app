@@ -6,7 +6,6 @@ import { fetchData } from '../actions/actions';
 export const SearchBar = () => {
     const dispatch = useDispatch();
     const query = useSelector((state) => state.search.query);
-    const searchResults = useSelector((state) => state.search.results);
     const searchStatus = useSelector((state) => state.search.status);
     const searchError = useSelector((state) => state.search.error);
 

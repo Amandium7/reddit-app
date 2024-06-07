@@ -19,7 +19,7 @@ export const PostItem = ({result}) => {
 
     return (
         <div className="post-item">
-            <a href={`https://www.reddit.com/${link}`} className="post-link" target="_blank">
+            <a href={`https://www.reddit.com/${link}`} className="post-link" target="_blank" rel="noreferrer">
                 <h2>{newTitle}</h2>
                 <div className="picture">
                     <img src={newImage} alt={result.data.title}/>
