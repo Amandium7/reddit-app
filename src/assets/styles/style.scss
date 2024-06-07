@@ -1,3 +1,13 @@
+$primary-accent: #FDFAAB;
+
+%transition {
+    transition: all .4s ease;
+}
+
+button {
+    cursor: pointer;
+}
+
 *,
 *:before,
 *:after {
@@ -65,7 +75,7 @@ body {
         left: 60px;
         width: 1px;
         height: calc(100% + 120px);
-        border-left: solid 1px #FDFAAB;
+        border-left: solid 1px $primary-accent;
         position: absolute;
     }
     &:after {
@@ -74,26 +84,26 @@ body {
         right: 60px;
         width: 1px;
         height: calc(100% + 120px);
-        border-left: solid 1px #FDFAAB;
+        border-left: solid 1px $primary-accent;
         position: absolute;
     }
     .gold-bar-top {
         width: 100%;
         height: 1px;
-        border-top: solid 1px #FDFAAB;
+        border-top: solid 1px $primary-accent;
         margin-top: 60px;
     }
     .gold-bar-bottom {
         width: 100%;
         height: 1px;
-        border-top: solid 1px #FDFAAB;
+        border-top: solid 1px $primary-accent;
         margin-bottom: 60px;
     }
     .row {
         padding: calc(8% + 60px) 20px;
         h2 {
             color: white;
-            font-size: 48px;
+            font-size: 60px;
             margin-top: 0;
         }
         .api-text {
@@ -102,6 +112,39 @@ body {
             left: 50%;
             top: 75%;
             transform: translate(-50%, -50%);
+        }
+        .controls {
+            display: flex;
+            flex-direction: column;
+            max-width: 1000px;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            input {
+               background: none;
+               box-shadow: none;
+               border: solid 1px $primary-accent;
+               border-radius: 50px;
+               padding: 20px 60px;
+               width: 800px;
+            }
+            input[value] {
+                color: white;
+                font-size: 32px;
+            }
+            button {
+                background: none;
+                border: solid white 1px;
+                padding: 20px 40px;
+                color: white;
+                border-radius: 50px;
+                @extend %transition;
+                &:hover {
+                    background: white;
+                    color: black;
+                }
+            }
         }
     }
 }

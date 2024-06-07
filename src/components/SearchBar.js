@@ -24,12 +24,14 @@ export const SearchBar = () => {
             <div className="gold-bar-top"></div>
             <div className="row">
                 <h2>Search</h2>
-                <input 
-                    type="text"
-                    value = {query}
-                    onChange = {handleInputChange}
-                />
-                <button onClick={ handleSearch}>Search</button>
+                <div className="controls">
+                    <input 
+                        type="text"
+                        value = {query}
+                        onChange = {handleInputChange}
+                    />
+                    <button onClick={ handleSearch}>Search</button>
+                </div>
                 {searchStatus === 'loading' && <p className="api-text">Loading...</p>}
                 {searchStatus === 'failed' && <p className="api-text">Error...{searchError}</p>}
                 {/* {searchStatus === 'succeeded' && ()} */}

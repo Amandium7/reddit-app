@@ -1,4 +1,5 @@
 import React from 'react';
+import heroImage from '../assets/images/reddit-app-hero.jpg';
 
 export const PostItem = ({result}) => {
     const newTitle = result.data.title.length > 50 
@@ -8,13 +9,13 @@ export const PostItem = ({result}) => {
     const link = result.data.permalink
 
     let newImage;
-    if (result.data.thumbnail.includes('external-preview')){
-        newImage = '/assets/images/reddit-app-hero';
+    if (result.data.thumbnail.includes('https://external-preview') || 
+    result.data.thumbnail === "self" ||
+    result.data.thumbnail === "spoiler") {
+        newImage = heroImage;
     } else {
         newImage = result.data.thumbnail;
     }
-
-    console.log(newImage)
 
     return (
         <div className="post-item">
